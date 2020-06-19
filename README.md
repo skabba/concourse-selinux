@@ -24,6 +24,7 @@ allow irqbalance_t var_run_t:sock_file create;
 #============= unconfined_service_t ==============
 allow unconfined_service_t self:cap_userns { kill net_admin setgid setuid sys_admin sys_ptrace dac_override dac_read_search setpcap sys_chroot };
 EOF
+
 ```
 checkmodule -M -m -o /usr/local/concourse/concourse-ci-worker-policy.mod /usr/local/concourse/concourse-ci-worker-policy.te
 semodule_package -o /usr/local/concourse/concourse-ci-worker-policy.pp -m /usr/local/concourse/concourse-ci-worker-policy.mod
