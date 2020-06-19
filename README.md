@@ -26,7 +26,8 @@ allow unconfined_service_t self:cap_userns { kill net_admin setgid setuid sys_ad
 EOF
 ```
 
-`checkmodule -M -m -o /usr/local/concourse/concourse-ci-worker-policy.mod /usr/local/concourse/concourse-ci-worker-policy.te`
-`semodule_package -o /usr/local/concourse/concourse-ci-worker-policy.pp -m /usr/local/concourse/concourse-ci-worker-policy.mod`
-`semodule -i /usr/local/concourse/concourse-ci-worker-policy.pp`
-
+```
+checkmodule -M -m -o /usr/local/concourse/concourse-ci-worker-policy.mod /usr/local/concourse/concourse-ci-worker-policy.te
+semodule_package -o /usr/local/concourse/concourse-ci-worker-policy.pp -m /usr/local/concourse/concourse-ci-worker-policy.mod
+semodule -i /usr/local/concourse/concourse-ci-worker-policy.pp
+```
